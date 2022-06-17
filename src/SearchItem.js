@@ -1,12 +1,15 @@
 import React from 'react';
-import { FaSearch } from 'react-icons/fa';
-function SearchItem() {
+function SearchItem({ search, setSearch, items, setItems }) {
 	return (
 		<form>
-			<input type="search" />
-            <FaSearch role="button" onClick={() => {
-                
-            }}/>
+			<input
+				placeholder="search"
+				type="search"
+				value={search}
+				onChange={(e) => {
+					setSearch(e.target.value);
+				}}
+			/>
 		</form>
 	);
 }
